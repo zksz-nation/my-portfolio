@@ -8,9 +8,23 @@
   --accent-soft: rgba(232, 85, 47, 0.09);
   --line: #e4e1da;
   --card: #ffffff;
+  --header-bg: rgba(250, 249, 246, 0.92);
   --radius: 14px;
   --sidebar-w: 312px;
   --sans: "PingFang SC", "Microsoft YaHei", "Segoe UI", system-ui, sans-serif;
+}
+
+/* ============ 深色主题变量覆盖 ============ */
+[data-theme="dark"] {
+  --bg: #161719;
+  --ink: #e8e6e3;
+  --ink-soft: #a0a3aa;
+  --ink-faint: #6b6e75;
+  --accent: #f0633f;
+  --accent-soft: rgba(240, 99, 63, 0.14);
+  --line: #2a2b2e;
+  --card: #1c1d20;
+  --header-bg: rgba(22, 23, 25, 0.92);
 }
 
 /* ============ 基础 ============ */
@@ -457,6 +471,46 @@ ul { list-style: none; }
   color: var(--ink-faint);
 }
 
+/* ============ 主题切换按钮 ============ */
+.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--bg);
+  color: var(--ink-soft);
+  cursor: pointer;
+  transition: color 0.2s, border-color 0.2s, background 0.2s;
+  flex-shrink: 0;
+}
+
+.theme-toggle:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+}
+
+/* 深色模式显示太阳图标，浅色模式显示月亮图标 */
+.theme-toggle .icon-sun { display: none; }
+.theme-toggle .icon-moon { display: block; }
+[data-theme="dark"] .theme-toggle .icon-sun { display: block; }
+[data-theme="dark"] .theme-toggle .icon-moon { display: none; }
+
+/* 桌面端侧栏切换按钮 */
+.theme-toggle--desktop {
+  width: 32px;
+  height: 32px;
+}
+
+/* 侧栏顶部：logo + 主题切换按钮 */
+.sidebar-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
 /* ============ 移动端：顶栏 + 抽屉 ============ */
 .mobile-intro { display: none; }
 
@@ -465,7 +519,7 @@ ul { list-style: none; }
   position: sticky;
   top: 0;
   z-index: 30;
-  background: rgba(250, 249, 246, 0.92);
+  background: var(--header-bg);
   backdrop-filter: blur(8px);
   border-bottom: 1px solid var(--line);
   padding: 14px 20px;
@@ -476,6 +530,12 @@ ul { list-style: none; }
 .mobile-logo {
   font-size: 20px;
   font-weight: 800;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
 }
 
 .menu-btn {

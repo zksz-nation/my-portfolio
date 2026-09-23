@@ -179,6 +179,21 @@ function renderContacts() {
   body.appendChild(rows);
 }
 
+// ---------- 主题切换 ----------
+function initTheme() {
+  var root = document.documentElement;
+  var buttons = document.querySelectorAll(".theme-toggle");
+
+  buttons.forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      var current = root.getAttribute("data-theme") || "light";
+      var next = current === "light" ? "dark" : "light";
+      root.setAttribute("data-theme", next);
+      localStorage.setItem("theme", next);
+    });
+  });
+}
+
 // ---------- 移动端抽屉菜单 ----------
 function closeDrawer() {
   document.getElementById("drawer").classList.remove("open");
@@ -216,4 +231,5 @@ document.addEventListener("DOMContentLoaded", () => {
   renderContacts();
   initDrawer();
   initNavHighlight();
+  initTheme();
 });
