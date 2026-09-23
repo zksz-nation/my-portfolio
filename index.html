@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>郑思凯 · 个人作品集</title>
+  <link rel="stylesheet" href="css/style.css?v=2">
+</head>
+<body>
+
+  <!-- 移动端顶部栏（桌面端隐藏） -->
+  <header class="mobile-header">
+    <a class="mobile-logo" href="#top">郑思凯<span class="accent">.</span></a>
+    <button class="menu-btn" id="menuBtn" aria-label="打开菜单" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </header>
+
+  <!-- 移动端抽屉导航 -->
+  <nav class="drawer" id="drawer" aria-hidden="true">
+    <ul class="drawer-nav"></ul>
+  </nav>
+  <div class="drawer-mask" id="drawerMask"></div>
+
+  <!-- 左侧固定侧栏（桌面端） -->
+  <aside class="sidebar" id="top">
+    <div class="sidebar-inner">
+      <a class="logo" href="#top">郑思凯<span class="accent">.</span></a>
+
+      <div class="identity">
+        <p class="role">软件工程 · AI 辅助开发与大语言模型应用</p>
+        <h1 class="name">你好，我是郑思凯</h1>
+        <p class="bio">软件工程专业在读学生，目前主要关注 AI 辅助开发与大语言模型技术，持续学习前后端开发、数据可视化和 AI 应用构建。</p>
+      </div>
+
+      <nav class="side-nav" aria-label="站内导航">
+        <ul id="navList"></ul>
+      </nav>
+
+      <section class="skills">
+        <h2 class="side-title">技能方向</h2>
+        <div id="skillList" class="skill-groups"></div>
+      </section>
+
+      <div class="sidebar-footer">
+        <a href="mailto:2637996322@qq.com" class="mail-link">2637996322@qq.com</a>
+        <div class="social" id="socialLinks"></div>
+      </div>
+
+      <span class="side-bar-accent" aria-hidden="true"></span>
+    </div>
+  </aside>
+
+  <!-- 右侧主内容区 -->
+  <main class="main">
+
+    <!-- 移动端自我介绍摘要（桌面端隐藏） -->
+    <section class="mobile-intro" id="mobileIntro"></section>
+
+    <!-- 项目作品 -->
+    <section class="section" id="works">
+      <header class="section-head">
+        <span class="section-index">01</span>
+        <h2 class="section-title">项目作品</h2>
+        <p class="section-sub">精选的个人与课程项目，持续更新中</p>
+      </header>
+      <div id="projectList" class="projects"></div>
+    </section>
+
+    <!-- 关于我 -->
+    <section class="section" id="about">
+      <header class="section-head">
+        <span class="section-index">02</span>
+        <h2 class="section-title">关于我</h2>
+        <p class="section-sub">一些背景与正在走的路</p>
+      </header>
+      <div class="about-body" id="aboutBody"></div>
+    </section>
+
+    <!-- 联系方式 -->
+    <section class="section section-last" id="contact">
+      <header class="section-head">
+        <span class="section-index">03</span>
+        <h2 class="section-title">联系方式</h2>
+        <p class="section-sub">欢迎交流、合作或只是打个招呼</p>
+      </header>
+      <div class="contact-body" id="contactBody"></div>
+    </section>
+
+    <footer class="footer">
+      <p>© 2026 郑思凯 · 用原生 HTML / CSS / JS 构建</p>
+    </footer>
+  </main>
+
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
